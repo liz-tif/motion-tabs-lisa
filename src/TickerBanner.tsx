@@ -16,14 +16,15 @@
  *   - Loop: Reinlaufen → Durchlaufen → Verschwinden → Pause → Wiederholen
  */
 
-const LINE_1 = "Coda has completed its acquisition of Recharge, Europe's leading prepaid payments platform."
-const LINE_2 = "Ready to scale your business globally? Get started with Coda today and unlock 400+ payment methods."
+const LINE_1 = "143 countries. 400+ payment methods. One integration."
+const LINE_2 = "$47M valuation. 10,000+ businesses trust Coda."
+const LINE_3 = "From Berlin to the world. Local payments, global scale."
 
 export function TickerBanner() {
   return (
-    <div className="fixed top-16 left-0 right-0 bg-gradient-to-r from-[var(--color-lilac-300)] via-[var(--color-pink-100)] to-[var(--color-lilac-300)] py-2 z-30 overflow-hidden">
+    <div className="fixed top-16 left-0 right-0 bg-[var(--color-bg)] py-2 z-30 overflow-hidden border-b border-[var(--color-lilac-300)]">
       {/* Fade-out Effekt am rechten Rand */}
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[var(--color-pink-100)] to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[var(--color-bg)] to-transparent pointer-events-none" />
 
       <div className="flex whitespace-nowrap animate-[scroll-with-pause_25s_infinite]">
         {/* Einmaliger Inhalt - komplett von rechts nach links */}
@@ -32,6 +33,9 @@ export function TickerBanner() {
         </span>
         <span className="text-xl font-bold text-[var(--color-vanilla-900)] px-8">
           {LINE_2}
+        </span>
+        <span className="text-xl font-bold text-[var(--color-vanilla-900)] px-8">
+          {LINE_3}
         </span>
       </div>
     </div>

@@ -38,61 +38,16 @@
  *   Linear, Vercel, Stripe, and Cal.com is built on.
  */
 
-import { motion } from "motion/react"
-import { useState } from "react"
-import { SPRING_PRESETS } from "./motion.config"
-
-const TABS = ["Products", "Solutions", "Knowledge Center", "Company"] as const
-type TabName = (typeof TABS)[number]
-
 export function TabBar() {
-  const [active, setActive] = useState<TabName>("Products")
-  const [likeCount, setLikeCount] = useState(0)
-  const [showCount, setShowCount] = useState(false)
-
   return (
-    <nav className="fixed top-0 left-0 right-0 flex gap-2 p-4 bg-[var(--color-nav-bg)] backdrop-blur-md z-40" style={{
+    <nav className="fixed top-0 left-0 right-0 flex gap-2 p-4 bg-[var(--color-brand)] backdrop-blur-md z-40" style={{
       boxShadow: '0 0 40px var(--color-lilac-400)'
     }}>
-      <div className="flex gap-2 mx-auto">
-        {TABS.map(tab => (
-          <button
-            key={tab}
-            onClick={() => setActive(tab)}
-            className="relative px-6 py-2 text-sm font-medium z-10"
-          >
-            {tab}
-            {active === tab && (
-              <motion.div
-                layoutId="tab-indicator"
-                className="absolute inset-0 bg-[var(--color-brand)] rounded-full -z-10"
-                transition={SPRING_PRESETS.snappy}
-              />
-            )}
-          </button>
-        ))}
+      <div className="flex gap-2 mx-auto items-center">
+        <h1 className="text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-serif)' }}>
+          Hi! It's Coda
+        </h1>
       </div>
-      <motion.button
-        onClick={() => setLikeCount(likeCount + 1)}
-        whileTap={{ scale: 0.8 }}
-        whileHover={{ scale: 1.1 }}
-        onMouseEnter={() => setShowCount(true)}
-        onMouseLeave={() => setShowCount(false)}
-        className="text-2xl cursor-pointer z-10 ml-4 relative"
-        animate={{
-          rotate: [0, -15, 15, -15, 15, 0],
-        }}
-        transition={{ duration: 0.5 }}
-      >
-        <span className="relative">❤️</span>
-        <motion.span
-          className="absolute -top-2 -right-2 bg-brand text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold"
-          initial={{ scale: 0 }}
-          animate={{ scale: showCount && likeCount > 0 ? 1 : 0 }}
-        >
-          {likeCount}
-        </motion.span>
-      </motion.button>
     </nav>
   )
 }

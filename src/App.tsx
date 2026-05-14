@@ -16,24 +16,61 @@
  *   what the primitive IS. Mandy's hello-motion follows the same pattern.
  */
 
+import { motion, useScroll, useTransform } from "motion/react"
 import { ScrollHero } from "./ScrollHero"
 import { NextSection } from "./NextSection"
-import { CursorFollower } from "./CursorFollower"
 import { TabBar } from "./TabBar"
-import { CyclingHeadline } from "./CyclingHeadline"
 import { RevealCard } from "./RevealCard"
 import { LogoStrip } from "./LogoStrip"
 import { TickerBanner } from "./TickerBanner"
 
+function CircleAnimation() {
+  const { scrollYProgress } = useScroll()
+  const circleScale = useTransform(scrollYProgress, [0, 0.1, 0.5], [0, 0.1, 2])
+  const circleOpacity = useTransform(scrollYProgress, [0, 0.05, 0.4, 0.6], [0, 1, 1, 0])
+
+  return (
+    <div className="fixed inset-0 grid place-items-center pointer-events-none z-0">
+      <motion.div
+        style={{ scale: circleScale, opacity: circleOpacity }}
+        className="w-96 h-96 rounded-full bg-[var(--color-brand)]"
+      />
+    </div>
+  )
+}
+
+function NewsletterCTA() {
+  return (
+    <section className="py-16 px-8 text-center relative z-10">
+      <h2 className="text-4xl font-bold mb-4" style={{ fontFamily: 'var(--font-serif)' }}>
+        Stay updated.
+      </h2>
+      <p className="text-lg opacity-80 mb-8 max-w-2xl mx-auto">
+        Get the latest payment insights, product updates, and exclusive industry trends delivered directly to your inbox.
+      </p>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-[var(--color-brand)] text-white px-8 py-4 rounded-full text-lg font-bold cursor-pointer"
+        style={{
+          boxShadow: '0 0 40px var(--color-lilac-400)'
+        }}
+      >
+        Subscribe to Newsletter ✨
+      </motion.button>
+    </section>
+  )
+}
+
 export default function App() {
   return (
     <main>
-      <CursorFollower />
       <TabBar />
       <TickerBanner />
       <ScrollHero />
+      <CircleAnimation />
       <NextSection />
-      <CyclingHeadline />
+      <NewsletterCTA />
       <RevealCard />
       <LogoStrip />
     </main>

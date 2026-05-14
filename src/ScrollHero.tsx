@@ -21,29 +21,66 @@
  *   5. That asymmetry is the whole point of MotionValues
  */
 
-import { motion, useScroll, useTransform } from "motion/react"
+import { motion, AnimatePresence } from "motion/react"
+import { useState, useEffect } from "react"
+
+const HEADLINES = [
+  {
+    headline: "SUBSCRIBE",
+    subline: "Get exclusive insights, product updates, and payment industry trends delivered to your inbox"
+  },
+  {
+    headline: "LAUNCH GLOBALLY",
+    subline: "Expand your business to 140+ countries with a single integration. Local payment methods included."
+  },
+  {
+    headline: "ONE API",
+    subline: "Simple implementation, powerful results. Start accepting payments in minutes, not months."
+  }
+]
 
 export function ScrollHero() {
-  const { scrollYProgress } = useScroll()
+  const [wordIndex, setWordIndex] = useState(0)
 
-  const circleScale = useTransform(scrollYProgress, [0, 0.3], [0, 7.5])
-  const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % HEADLINES.length)
+    }, 3500)
+
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <motion.section
-      className="min-h-[70vh] grid place-items-center text-center relative z-0"
+      className="min-h-screen grid place-items-center text-center relative z-0"
     >
-      <motion.div
-        style={{ scale: circleScale }}
-        className="w-96 h-96 rounded-full bg-[var(--color-brand)] z-0"
-      />
-      <motion.div
-        style={{ opacity: textOpacity }}
-        className="absolute"
-      >
-        <h1 className="text-9xl font-bold" style={{ fontFamily: 'var(--font-serif)' }}>
-          Hi! It's Coda
+      <motion.div className="absolute">
+        <h1 className="text-7xl font-bold mb-6" style={{ fontFamily: 'var(--font-serif)' }}>
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={wordIndex}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="inline-block"
+            >
+              {HEADLINES[wordIndex].headline}
+            </motion.span>
+          </AnimatePresence>
         </h1>
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={wordIndex}
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="text-2xl opacity-80 max-w-2xl mx-auto"
+          >
+            {HEADLINES[wordIndex].subline}
+          </motion.p>
+        </AnimatePresence>
       </motion.div>
     </motion.section>
   )

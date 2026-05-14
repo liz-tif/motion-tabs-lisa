@@ -20,10 +20,10 @@
 import { motion } from "motion/react"
 
 const PRODUCTS = [
-  { title: "Codashop", description: "Global marketplace for digital content" },
-  { title: "Codapay", description: "400+ payment methods worldwide" },
-  { title: "Coda Webstore", description: "Your webstore, your way" },
-  { title: "Coda Distribution", description: "Global partner network" },
+  { title: "400+ Payment Methods", description: "Accept payments via credit cards, e-wallets, bank transfers, and cash in 140+ countries" },
+  { title: "Global Coverage", description: "One integration gives you access to customers in Asia, LATAM, Africa, and beyond" },
+  { title: "One Integration", description: "Simple API implementation. We handle the complexity of local payment methods" },
+  { title: "Instant Payouts", description: "Get your money faster. Automated reconciliation and real-time transaction tracking" },
 ]
 
 export function RevealCard() {
@@ -40,7 +40,7 @@ export function RevealCard() {
           whileTap={{ scale: 0.95 }}
           className="bg-white/10 backdrop-blur-sm rounded-lg p-6 cursor-pointer relative overflow-hidden"
           style={{
-            boxShadow: index >= 2 ? '0 8px 32px rgba(0, 0, 0, 0.1), 0 0 40px var(--color-lilac-400)' : '0 8px 32px rgba(0, 0, 0, 0.1)'
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), 0 0 40px var(--color-lilac-400)'
           }}
         >
           <h3 className="text-xl font-bold mb-2">{product.title}</h3>

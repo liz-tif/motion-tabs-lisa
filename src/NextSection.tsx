@@ -11,6 +11,6 @@
 
 export function NextSection() {
   return (
-    <section className="min-h-screen bg-white/5" />
+    <section className="min-h-[50vh] bg-[var(--color-bg)]" />
   )
 }
