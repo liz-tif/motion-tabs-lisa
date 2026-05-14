@@ -26,14 +26,14 @@ const PARTNERS = [
 ]
 
 const partnerColors: Record<string, string> = {
-  "Call of Duty": "0 0 40px var(--color-lilac-400)",
-  "Tinder": "0 0 40px var(--color-lilac-400)",
-  "PUBG": "0 0 40px var(--color-lilac-400)",
-  "Mobile Legends": "0 0 40px var(--color-lilac-400)",
-  "Free Fire": "0 0 40px var(--color-lilac-400)",
-  "Netflix": "0 0 40px var(--color-lilac-400)",
-  "Spotify": "0 0 40px var(--color-lilac-400)",
-  "Google Play": "0 0 40px var(--color-lilac-400)",
+  "Call of Duty": "0 0 40px var(--color-green-400)",
+  "Tinder": "0 0 40px var(--color-green-400)",
+  "PUBG": "0 0 40px var(--color-green-400)",
+  "Mobile Legends": "0 0 40px var(--color-green-400)",
+  "Free Fire": "0 0 40px var(--color-green-400)",
+  "Netflix": "0 0 40px var(--color-green-400)",
+  "Spotify": "0 0 40px var(--color-green-400)",
+  "Google Play": "0 0 40px var(--color-green-400)",
 }
 
 const containerVariants = {

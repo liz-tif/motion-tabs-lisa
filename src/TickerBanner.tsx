@@ -22,7 +22,7 @@ const LINE_3 = "From Berlin to the world. Local payments, global scale."
 
 export function TickerBanner() {
   return (
-    <div className="fixed top-16 left-0 right-0 bg-[var(--color-bg)] py-2 z-30 overflow-hidden border-b border-[var(--color-lilac-300)]">
+    <div className="fixed top-16 left-0 right-0 bg-[var(--color-bg)] py-2 z-30 overflow-hidden border-b border-[var(--color-green-300)]">
       {/* Fade-out Effekt am rechten Rand */}
       <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[var(--color-bg)] to-transparent pointer-events-none" />
 

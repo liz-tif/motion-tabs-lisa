@@ -40,7 +40,7 @@ export function RevealCard() {
           whileTap={{ scale: 0.95 }}
           className="bg-white/10 backdrop-blur-sm rounded-lg p-6 cursor-pointer relative overflow-hidden"
           style={{
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), 0 0 40px var(--color-lilac-400)'
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), 0 0 40px var(--color-green-400)'
           }}
         >
           <h3 className="text-xl font-bold mb-2">{product.title}</h3>

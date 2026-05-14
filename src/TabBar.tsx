@@ -41,7 +41,7 @@
 export function TabBar() {
   return (
     <nav className="fixed top-0 left-0 right-0 flex gap-2 p-4 bg-[var(--color-brand)] backdrop-blur-md z-40" style={{
-      boxShadow: '0 0 40px var(--color-lilac-400)'
+      boxShadow: '0 0 40px var(--color-green-400)'
     }}>
       <div className="flex gap-2 mx-auto items-center">
         <h1 className="text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-serif)' }}>

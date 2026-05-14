@@ -14,22 +14,22 @@
  */
 @theme {
   /* Layer 1 — Primitives (raw values, never used by components directly) */
-  /* Flieder-Töne — kräftig & modern */
-  --color-lilac-500: oklch(75% 0.18 310);  /* Kräftiges Flieder */
-  --color-lilac-400: oklch(82% 0.15 310);  /* Weiches Flieder */
-  --color-lilac-300: oklch(88% 0.12 310);  /* Helles Flieder */
+  /* Grün-Töne — kräftig & modern */
+  --color-green-500: oklch(45% 0.15 145);  /* Kräftiges Dunkelgrün */
+  --color-green-400: oklch(55% 0.12 145);  /* Weiches Grün */
+  --color-green-300: oklch(70% 0.10 145);  /* Helles Grün */
 
   /* Vanilla-Töne — warm & clean */
   --color-vanilla-100: oklch(98% 0.01 85);  /* Fast weiß, warmer Stich */
   --color-vanilla-200: oklch(94% 0.02 85);  /* Creme */
-  --color-vanilla-900: oklch(20% 0.08 310); /* Dunkles Lila für Text */
+  --color-vanilla-900: oklch(20% 0.05 145); /* Dunkles Grün für Text */
 
   /* Rosa-Töne — für Navigation */
   --color-pink-100: oklch(95% 0.05 350);    /* Hellrosa für Nav-Hintergrund */
 
   /* Layer 2 — Semantic (the meaning) */
-  --color-brand: var(--color-lilac-500);           /* Haupt-Akzent */
-  --color-brand-soft: var(--color-lilac-400);      /* Sanfter Akzent */
+  --color-brand: var(--color-green-500);           /* Haupt-Akzent */
+  --color-brand-soft: var(--color-green-400);      /* Sanfter Akzent */
   --color-bg: var(--color-vanilla-100);           /* Heller Hintergrund */
   --color-ink: var(--color-vanilla-900);          /* Dunkler Text */
   --color-nav-bg: var(--color-pink-100);          /* Navigation Hintergrund */
