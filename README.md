@@ -79,12 +79,6 @@ Diese drei Sektionen treffen das "Gefühl der Page" weil sie die Kern-Identität
 - **Theme: Vanilla/Flieder** — Warm und modern statt dunklem Coda-Grün. Flieder als Brand-Akzent, Vanilla für cleanen Background.
 - **Typography: Merriweather** — Elegante Serif-Schrift für Headlines (Customize, Hi! It's Coda) trägt zur Premium-Ästhetik bei.
 
-**DevTools-Receipt:**
-✅ Alle Animations verwenden nur Transform-Properties (scale, y, opacity, rotate) — keine height/top/left/right.
-✅ AnimatePresence mit key={wordIndex} für saubere Exit-Animationen.
-✅ Kein "framer-motion" — überall "motion/react".
-✅ Paint flashing zeigt keine Repaints — alles GPU-beschleunigt.
-
 **Bottleneck:**
 Die **fünfte Iteration am TickerBanner** — das Springen/Flackern am Ende des Loops zu fixen hat am meisten Zeit gekostet. Die Lösung war: Complete Rewrite mit translateX(100% → -100%) und opacity fade statt looping percentage animation.
 
