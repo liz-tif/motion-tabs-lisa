@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap');
+
+/*
+ * 3-layer token architecture (Layer 1 → Layer 2 → Layer 3)
+ * Continues die system you built in W1. Same idea, new module.
+ *
+ * 🎨 NEW: Vanilla & Flieder Theme
+ *   Clean, modern, poppig — weg von dunklem Coda-Grün.
+ *
+ * ✨ NEW: Typography
+ *   Inter — moderne, serifenlose Schrift für Body & UI
+ *   Merriweather — elegante Serif-Schrift für Cycling Headline
+ */
+@theme {
+  /* Layer 1 — Primitives (raw values, never used by components directly) */
+  /* Flieder-Töne — kräftig & modern */
+  --color-lilac-500: oklch(75% 0.18 310);  /* Kräftiges Flieder */
+  --color-lilac-400: oklch(82% 0.15 310);  /* Weiches Flieder */
+  --color-lilac-300: oklch(88% 0.12 310);  /* Helles Flieder */
+
+  /* Vanilla-Töne — warm & clean */
+  --color-vanilla-100: oklch(98% 0.01 85);  /* Fast weiß, warmer Stich */
+  --color-vanilla-200: oklch(94% 0.02 85);  /* Creme */
+  --color-vanilla-900: oklch(20% 0.08 310); /* Dunkles Lila für Text */
+
+  /* Rosa-Töne — für Navigation */
+  --color-pink-100: oklch(95% 0.05 350);    /* Hellrosa für Nav-Hintergrund */
+
+  /* Layer 2 — Semantic (the meaning) */
+  --color-brand: var(--color-lilac-500);           /* Haupt-Akzent */
+  --color-brand-soft: var(--color-lilac-400);      /* Sanfter Akzent */
+  --color-bg: var(--color-vanilla-100);           /* Heller Hintergrund */
+  --color-ink: var(--color-vanilla-900);          /* Dunkler Text */
+  --color-nav-bg: var(--color-pink-100);          /* Navigation Hintergrund */
+
+  /* Typography */
+  --font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Merriweather', serif;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-family);
+  margin: 0;
+}
+
+/* Ticker Banner Animation - Mit Pause am Ende */
+@keyframes scroll-with-pause {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
