@@ -62,22 +62,23 @@ MIT.
 ## Coda Sprint — Mein Pick
 
 **Sections gepickt:**
-- Sektion 1: **ScrollHero** — Kreisanimation mit "Hi! It's Coda"
-- Sektion 2: **CyclingHeadline** — Rotierende Wörter (CUSTOMIZE/MONETIZE/MAXIMIZE)
-- Sektion 3: **TickerBanner** — Endlos laufendes Banner mit M&A News
+- Sektion 1: **ScrollHero + CircleAnimation** — Animiertes Headline-Paar (SUBSCRIBE/LAUNCH GLOBALLY/ONE API) mit wachsendem Kreis
+- Sektion 2: **RevealCard** — 4 Benefits Boxen (400+ Payment Methods, Global Coverage, One Integration, Instant Payouts)
+- Sektion 3: **TickerBanner** — Professionelles News-Ticker mit Metrics & Social Proof
 
 **Warum diese:**
-Diese drei Sektionen treffen das "Gefühl der Page" weil sie die Kern-Identität von Coda kommunizieren: Modern, dynamisch, und im Wachsen. Der wachsende Flieder-Kreis symbolisiert Skalierung, die rotierenden Wörter zeigen die Vielfalt der Lösungen, und das Ticker-Banner gibt aktuelles Unternehmensgeschehen wieder. Zusammen schaffen sie eine visuelle Story von Innovation und Wachstum.
+Diese drei Sektionen treffen das "Gefühl der Page" weil sie die Kern-Identität von Coda kommunizieren: Modern, dynamisch, und im Wachsen. Der wachsende Kreis symbolisiert Skalierung, die rotierenden Headline-Paare zeigen die Vielfalt der Lösungen, und die Benefits kommunizieren konkreten Value. Zusammen schaffen sie eine visuelle Story von Innovation und Wachstum.
 
 **Entscheidungen:**
 - **Cycling speed: 3.5s** — Balance zwischen Lesbarkeit und Dynamik. Nicht zu schnell zum Lesen, nicht zu langweilig für wiederkehrende Besucher.
-- **Kreis scale: 0 → 7.5x bei 30% scroll** — Der Kreis wächst schnell genug um den Screen mit Flieder zu füllen, aber stoppt bevor er die ganzen Partner überdeckt. Endet etwa bei den ersten Produktkarten.
+- **Kreis scale: 0 → 0.1 → 2 (0% → 10% → 50% scroll)** — Der Kreis erscheint erst beim Scrollen, wächst zum größten Punkt bei 30% scroll, und verschwindet sanft bei 60% scroll.
+- **Circle opacity: 0 → 1 → 0 (0% → 5% → 40-60% scroll)** — Sanfter Fade-in und Fade-out für natürliche Übergänge.
 - **viewport.amount: 0.3** — 30% der Card muss sichtbar sein für Trigger. Gute Balance zwischen early trigger und user attention. 0.1 wäre zu früh, 0.5 zu spät.
-- **staggerChildren delay: 0.1s** — Deutlicher aber nicht zu langsamer Versatz zwischen den Partner-Logos. 0.05s wäre zu subtil, 0.15s zu langsam für 8 Logos.
-- **ScrollHero height: 70vh** — Kürzer als volle Screen-Höhe für snappigere Experience, aber genug Raum für den "Hi! It's Coda" Text.
-- **Ticker duration: 25s** — Komfortable Lesegeschwindigkeit für den langen Acquisition-Text. Schneller wäre stressig, langsamer würde langweilig.
-- **Theme: Vanilla/Flieder** — Warm und modern statt dunklem Coda-Grün. Flieder als Brand-Akzent, Vanilla für cleanen Background.
-- **Typography: Merriweather** — Elegante Serif-Schrift für Headlines (Customize, Hi! It's Coda) trägt zur Premium-Ästhetik bei.
+- **staggerChildren delay: 0.1s** — Deutlicher aber nicht zu langsamer Versatz zwischen den Benefits-Cards.
+- **ScrollHero height: min-h-screen** — Fulle Screen-Höhe für maximalen Impact bei der ersten Animation.
+- **Ticker duration: 25s** — Komfortable Lesegeschwindigkeit für die Metrics-Headlines.
+- **Theme: Vanilla/Dunkelgrün** — Warm und modern mit kräftigem Grün als Brand-Akzent.
+- **Typography: Merriweather** — Elegante Serif-Schrift für Headlines trägt zur Premium-Ästhetik bei.
 
 **Bottleneck:**
 Die **fünfte Iteration am TickerBanner** — das Springen/Flackern am Ende des Loops zu fixen hat am meisten Zeit gekostet. Die Lösung war: Complete Rewrite mit translateX(100% → -100%) und opacity fade statt looping percentage animation.
