@@ -26,14 +26,14 @@ const PARTNERS = [
 ]
 
 const partnerColors: Record<string, string> = {
-  "Call of Duty": "0 0 40px var(--color-green-400)",
-  "Tinder": "0 0 40px var(--color-green-400)",
-  "PUBG": "0 0 40px var(--color-green-400)",
-  "Mobile Legends": "0 0 40px var(--color-green-400)",
-  "Free Fire": "0 0 40px var(--color-green-400)",
-  "Netflix": "0 0 40px var(--color-green-400)",
-  "Spotify": "0 0 40px var(--color-green-400)",
-  "Google Play": "0 0 40px var(--color-green-400)",
+  "Call of Duty": "0 0 20px var(--color-green-400)",
+  "Tinder": "0 0 20px var(--color-green-400)",
+  "PUBG": "0 0 20px var(--color-green-400)",
+  "Mobile Legends": "0 0 20px var(--color-green-400)",
+  "Free Fire": "0 0 20px var(--color-green-400)",
+  "Netflix": "0 0 20px var(--color-green-400)",
+  "Spotify": "0 0 20px var(--color-green-400)",
+  "Google Play": "0 0 20px var(--color-green-400)",
 }
 
 const containerVariants = {
@@ -60,7 +60,7 @@ export function LogoStrip() {
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ amount: 0.3, once: true }}
+      viewport={{ amount: 0.3, once: false }}
       variants={containerVariants}
       className="py-12 px-8"
     >

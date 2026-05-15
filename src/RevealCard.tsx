@@ -34,13 +34,13 @@ export function RevealCard() {
           key={product.title}
           initial={{ scale: 0.8, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ amount: 0.3, once: true }}
+          viewport={{ amount: 0.3, once: false }}
           transition={{ duration: 0.4, delay: index * 0.1 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="bg-white/10 backdrop-blur-sm rounded-lg p-6 cursor-pointer relative overflow-hidden"
           style={{
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), 0 0 40px var(--color-green-400)'
+            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.05), 0 0 20px var(--color-green-400)'
           }}
         >
           <h3 className="text-xl font-bold mb-2">{product.title}</h3>

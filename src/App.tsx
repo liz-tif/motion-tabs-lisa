@@ -53,7 +53,7 @@ function NewsletterCTA() {
         whileTap={{ scale: 0.95 }}
         className="bg-[var(--color-brand)] text-white px-8 py-4 rounded-full text-lg font-bold cursor-pointer"
         style={{
-          boxShadow: '0 0 40px var(--color-green-400)'
+          boxShadow: '0 0 20px var(--color-green-400)'
         }}
       >
         Subscribe to Newsletter ✨
